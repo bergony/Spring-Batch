@@ -1,0 +1,4 @@
+Alonso tentou implementar o seu primeiro Job Spring Batch,
+ mas o seu projeto não funciona. Ele pediu a sua ajuda para 
+encontrar e corrigir os erros. Descreva quais erros ele 
+cometeu para que ele possa corrigí-los.
