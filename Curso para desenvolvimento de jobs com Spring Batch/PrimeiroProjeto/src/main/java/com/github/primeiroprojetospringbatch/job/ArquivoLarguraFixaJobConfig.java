@@ -11,16 +11,16 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @EnableBatchProcessing
-public class ImprimeOlaJobConfig {
+public class ArquivoLarguraFixaJobConfig {
 
     @Autowired
     private JobBuilderFactory jobBuilderFactory;
 
     @Bean
-    public Job imprimeOlaJob(Step imprimeOlaStep){
+    public Job leituraArquivoLarguraFixaJob(Step leituraArquivoLarguraFixaStep){
         return  jobBuilderFactory
                 .get("imprimeParImparStep")
-                .start(imprimeOlaStep)
+                .start(leituraArquivoLarguraFixaStep)
                 .incrementer(new RunIdIncrementer())
                 .build();
     }
