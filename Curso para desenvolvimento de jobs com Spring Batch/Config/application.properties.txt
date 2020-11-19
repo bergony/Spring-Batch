@@ -1,0 +1,8 @@
+spring.datasource.jdbcurl=jdbc:mysql://${MYSQL_HOST:localhost}:3306/spring_batch?useUnicode=true?characterEncoding=UTF-8?useTimezone=true&serverTimezone=UTC
+spring.datasource.username=root
+spring.datasource.password=123456
+app.datasource.jdbcurl=jdbc:mysql://${MYSQL_HOST:localhost}:3306/app?useUnicode=true?characterEncoding=UTF-8?useTimezone=true&serverTimezone=UTC
+app.datasource.username=root
+app.datasource.password=123456
+spring.batch.initialize-schema=always
+ 

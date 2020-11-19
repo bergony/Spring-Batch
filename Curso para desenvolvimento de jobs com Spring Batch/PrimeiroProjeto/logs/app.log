@@ -1,0 +1,23 @@
+2020-11-18 21:18:46,505 INFO c.g.p.PrimeiroprojetospringbatchApplication [main] Starting PrimeiroprojetospringbatchApplication using Java 1.8.0_271 on DESKTOP-84AAG7T with PID 6480 (F:\Downloads\Projetos_Intellij\Spring-Batch\Curso para desenvolvimento de jobs com Spring Batch\PrimeiroProjeto\target\classes started by Bergo in F:\Downloads\Projetos_Intellij\Spring-Batch\Curso para desenvolvimento de jobs com Spring Batch\PrimeiroProjeto)
+2020-11-18 21:18:46,509 INFO c.g.p.PrimeiroprojetospringbatchApplication [main] No active profile set, falling back to default profiles: default
+2020-11-18 21:18:46,884 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-11-18 21:18:46,898 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 6 ms. Found 0 JPA repository interfaces.
+2020-11-18 21:18:46,986 INFO o.s.c.a.ConfigurationClassEnhancer [main] @Bean method PropsConfig.config is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2020-11-18 21:18:47,181 INFO o.s.s.c.ThreadPoolTaskExecutor [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-18 21:18:47,671 INFO o.h.j.i.u.LogHelper [task-1] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-18 21:18:47,762 INFO o.h.Version [task-1] HHH000412: Hibernate ORM core version 5.4.23.Final
+2020-11-18 21:18:47,852 INFO o.s.b.c.r.s.JobRepositoryFactoryBean [main] No database type set, using meta data indicating: MYSQL
+2020-11-18 21:18:47,899 INFO o.h.a.c.Version [task-1] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-11-18 21:18:47,933 INFO o.s.b.c.l.s.SimpleJobLauncher [main] No TaskExecutor has been set, defaulting to synchronous executor.
+2020-11-18 21:18:48,016 INFO o.h.d.Dialect [task-1] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-11-18 21:18:48,020 INFO o.s.d.r.c.DeferredRepositoryInitializationListener [main] Triggering deferred initialization of Spring Data repositories…
+2020-11-18 21:18:48,020 INFO o.s.d.r.c.DeferredRepositoryInitializationListener [main] Spring Data repositories initialized!
+2020-11-18 21:18:48,027 INFO c.g.p.PrimeiroprojetospringbatchApplication [main] Started PrimeiroprojetospringbatchApplication in 2.21 seconds (JVM running for 3.102)
+2020-11-18 21:18:48,180 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [task-1] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-18 21:18:48,192 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [task-1] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-18 21:18:48,349 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=imprimeParImparStep]] launched with the following parameters: [{name=Bergony, run.id=6}]
+2020-11-18 21:18:48,389 INFO o.s.b.c.j.SimpleStepHandler [main] Executing step: [imprimeOlaStep]
+2020-11-18 21:18:48,426 INFO o.s.b.c.s.AbstractStep [main] Step: [imprimeOlaStep] executed in 37ms
+2020-11-18 21:18:48,439 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=imprimeParImparStep]] completed with the following parameters: [{name=Bergony, run.id=6}] and the following status: [COMPLETED] in 68ms
+2020-11-18 21:19:48,199 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-18 21:19:48,204 INFO o.s.s.c.ThreadPoolTaskExecutor [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
