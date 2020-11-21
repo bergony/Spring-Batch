@@ -10,9 +10,24 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class LeituraArquivoLarguraFixaWriterConfig {
 
-        @Bean
-        public ItemWriter<Cliente> leituraArquivoLarguraFixaWriter() {
-            return items -> items.forEach(System.out::println);
-        }
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    @Bean
+    public ItemWriter leituraArquivoDelimitadoWriter() {
+        return items -> items.forEach(System.out::println);
+    }
+//
+//    @Bean
+//    public ItemWriter<Cliente> leituraArquivoLarguraFixaWriter() {
+//        return items -> items.forEach(System.out::println);
 
+//            return itens -> {
+//                for(Cliente cliente: itens) {
+//                    if(cliente.getNome().equals("Mari"))
+//                        throw new Exception();
+//                    else
+//                        System.out.println(cliente);
+//                }
+//            };
+//
+//    }
 }

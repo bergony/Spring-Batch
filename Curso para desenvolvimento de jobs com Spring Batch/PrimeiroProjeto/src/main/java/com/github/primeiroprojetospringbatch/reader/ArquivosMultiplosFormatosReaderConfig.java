@@ -3,6 +3,7 @@ package com.github.primeiroprojetospringbatch.reader;
 import com.github.primeiroprojetospringbatch.dominio.Cliente;
 import org.springframework.batch.core.configuration.annotation.StepScope;
 import org.springframework.batch.item.file.FlatFileItemReader;
+import org.springframework.batch.item.file.LineMapper;
 import org.springframework.batch.item.file.builder.FlatFileItemReaderBuilder;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -11,20 +12,19 @@ import org.springframework.core.io.Resource;
 
 
 @Configuration
-public class LeituraArquivoLarguraFixaReaderConfig {
+public class ArquivosMultiplosFormatosReaderConfig {
 
+    @SuppressWarnings({"rawTypes", "unchecked", "SpringElInspection", "rawtypes"})
     @StepScope
     @Bean
-    public FlatFileItemReader<Cliente> leituraArquivoDelimitadoReader(
-            @Value("#{jobParameters['arquivoClientes']}") Resource arquivoClientes) {
-        return new FlatFileItemReaderBuilder<Cliente>()
-                .name("leituraArquivoDelimitadoReader")
+    public FlatFileItemReader<Cliente> ArquivosMultiplosFormatosReader(
+            @Value("#{jobParameters[arquivoClientes]}") Resource arquivoClientes,
+            LineMapper lineMapper) {
+        return new FlatFileItemReaderBuilder()
+                .name("ArquivosMultiplosFormatosReader")
                 .resource(arquivoClientes)
-                .delimited()
-                .names("nome", "sobrenome", "idade", "email")
-                .targetType(Cliente.class)
+                .lineMapper(lineMapper)
                 .build();
-
     }
 
 }

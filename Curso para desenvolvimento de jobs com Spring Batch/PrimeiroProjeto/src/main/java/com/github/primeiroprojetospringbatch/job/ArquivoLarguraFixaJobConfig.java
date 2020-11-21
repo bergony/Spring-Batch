@@ -19,9 +19,9 @@ public class ArquivoLarguraFixaJobConfig {
     @Bean
     public Job leituraArquivoLarguraFixaJob(Step leituraArquivoLarguraFixaStep){
         return  jobBuilderFactory
-                .get("imprimeParImparStep")
+                .get("leituraArquivoLarguraFixaJob")
                 .start(leituraArquivoLarguraFixaStep)
-                .incrementer(new RunIdIncrementer())
+                //.incrementer(new RunIdIncrementer())
                 .build();
     }
 
