@@ -1688,3 +1688,438 @@ java.lang.ClassCastException: com.github.primeiroprojetospringbatch.dominio.Tran
 2020-11-21 00:14:45,442 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=leituraArquivoLarguraFixaJob]] completed with the following parameters: [{arquivoClientes=file:../Files/clientes.txt}] and the following status: [COMPLETED] in 140ms
 2020-11-21 00:15:45,034 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
 2020-11-21 00:15:45,034 INFO o.s.s.c.ThreadPoolTaskExecutor [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-22 23:14:37,905 INFO c.g.p.PrimeiroprojetospringbatchApplication [main] Starting PrimeiroprojetospringbatchApplication using Java 1.8.0_271 on DESKTOP-84AAG7T with PID 13408 (F:\Downloads\Projetos_Intellij\Spring-Batch\Curso para desenvolvimento de jobs com Spring Batch\PrimeiroProjeto\target\classes started by Bergo in F:\Downloads\Projetos_Intellij\Spring-Batch\Curso para desenvolvimento de jobs com Spring Batch\PrimeiroProjeto)
+2020-11-22 23:14:37,910 INFO c.g.p.PrimeiroprojetospringbatchApplication [main] No active profile set, falling back to default profiles: default
+2020-11-22 23:14:38,458 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-11-22 23:14:38,479 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 10 ms. Found 0 JPA repository interfaces.
+2020-11-22 23:14:38,599 INFO o.s.c.a.ConfigurationClassEnhancer [main] @Bean method PropsConfig.config is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2020-11-22 23:14:38,849 INFO o.s.s.c.ThreadPoolTaskExecutor [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-22 23:14:39,569 INFO o.h.j.i.u.LogHelper [task-1] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-22 23:14:39,690 INFO o.h.Version [task-1] HHH000412: Hibernate ORM core version 5.4.23.Final
+2020-11-22 23:14:39,876 INFO o.s.b.c.r.s.JobRepositoryFactoryBean [main] No database type set, using meta data indicating: MYSQL
+2020-11-22 23:14:39,902 INFO o.h.a.c.Version [task-1] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-11-22 23:14:39,985 INFO o.s.b.c.l.s.SimpleJobLauncher [main] No TaskExecutor has been set, defaulting to synchronous executor.
+2020-11-22 23:14:40,068 INFO o.h.d.Dialect [task-1] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-11-22 23:14:40,079 INFO o.s.d.r.c.DeferredRepositoryInitializationListener [main] Triggering deferred initialization of Spring Data repositories…
+2020-11-22 23:14:40,079 INFO o.s.d.r.c.DeferredRepositoryInitializationListener [main] Spring Data repositories initialized!
+2020-11-22 23:14:40,088 INFO c.g.p.PrimeiroprojetospringbatchApplication [main] Started PrimeiroprojetospringbatchApplication in 3.156 seconds (JVM running for 4.497)
+2020-11-22 23:14:40,297 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [task-1] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-22 23:14:40,312 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [task-1] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-22 23:14:40,465 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=leituraArquivoLarguraFixaJob]] launched with the following parameters: [{arquivosClientes=file:../Files/clientes*}]
+2020-11-22 23:14:40,515 INFO o.s.b.c.j.SimpleStepHandler [main] Executing step: [leituraArquivoLarguraFixaStep]
+2020-11-22 23:14:40,542 ERROR o.s.b.c.s.AbstractStep [main] Encountered an error executing step leituraArquivoLarguraFixaStep in job leituraArquivoLarguraFixaJob
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'scopedTarget.MultiplosArquivosClienteTransacaoReader' defined in class path resource [com/github/primeiroprojetospringbatch/reader/MultiplosArquivosClienteTransacaoReaderConfig.class]: Unsatisfied dependency expressed through method 'MultiplosArquivosClienteTransacaoReader' parameter 1; nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'org.springframework.batch.item.file.FlatFileItemReader<?>' available: expected single matching bean but found 3: ArquivosMultiplosFormatosReader,leituraArquivoLarguraFixaReader,leituraArquivoDelimitadoReader
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:798) ~[spring-beans-5.3.1.jar:5.3.1]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:539) ~[spring-beans-5.3.1.jar:5.3.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336) ~[spring-beans-5.3.1.jar:5.3.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1179) ~[spring-beans-5.3.1.jar:5.3.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:571) ~[spring-beans-5.3.1.jar:5.3.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) ~[spring-beans-5.3.1.jar:5.3.1]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$1(AbstractBeanFactory.java:374) ~[spring-beans-5.3.1.jar:5.3.1]
+	at org.springframework.batch.core.scope.StepScope.get(StepScope.java:113) ~[spring-batch-core-4.3.0.jar:4.3.0]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:371) ~[spring-beans-5.3.1.jar:5.3.1]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.1.jar:5.3.1]
+	at org.springframework.aop.target.SimpleBeanTargetSource.getTarget(SimpleBeanTargetSource.java:35) ~[spring-aop-5.3.1.jar:5.3.1]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:675) ~[spring-aop-5.3.1.jar:5.3.1]
+	at org.springframework.batch.item.file.MultiResourceItemReader$$EnhancerBySpringCGLIB$$d861c98a.open(<generated>) ~[spring-batch-infrastructure-4.3.0.jar:4.3.0]
+	at org.springframework.batch.item.support.CompositeItemStream.open(CompositeItemStream.java:104) ~[spring-batch-infrastructure-4.3.0.jar:4.3.0]
+	at org.springframework.batch.core.step.tasklet.TaskletStep.open(TaskletStep.java:311) ~[spring-batch-core-4.3.0.jar:4.3.0]
+	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:205) [spring-batch-core-4.3.0.jar:4.3.0]
+	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:148) [spring-batch-core-4.3.0.jar:4.3.0]
+	at org.springframework.batch.core.job.AbstractJob.handleStep(AbstractJob.java:411) [spring-batch-core-4.3.0.jar:4.3.0]
+	at org.springframework.batch.core.job.SimpleJob.doExecute(SimpleJob.java:136) [spring-batch-core-4.3.0.jar:4.3.0]
+	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:320) [spring-batch-core-4.3.0.jar:4.3.0]
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:147) [spring-batch-core-4.3.0.jar:4.3.0]
+	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:50) [spring-core-5.3.1.jar:5.3.1]
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:140) [spring-batch-core-4.3.0.jar:4.3.0]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_271]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_271]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_271]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_271]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) [spring-aop-5.3.1.jar:5.3.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198) [spring-aop-5.3.1.jar:5.3.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) [spring-aop-5.3.1.jar:5.3.1]
+	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:128) [spring-batch-core-4.3.0.jar:4.3.0]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.3.1.jar:5.3.1]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) [spring-aop-5.3.1.jar:5.3.1]
+	at com.sun.proxy.$Proxy68.run(Unknown Source) [?:?]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.execute(JobLauncherApplicationRunner.java:199) [spring-boot-autoconfigure-2.4.0.jar:2.4.0]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.executeLocalJobs(JobLauncherApplicationRunner.java:173) [spring-boot-autoconfigure-2.4.0.jar:2.4.0]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.launchJobFromProperties(JobLauncherApplicationRunner.java:160) [spring-boot-autoconfigure-2.4.0.jar:2.4.0]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:155) [spring-boot-autoconfigure-2.4.0.jar:2.4.0]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:150) [spring-boot-autoconfigure-2.4.0.jar:2.4.0]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:795) [spring-boot-2.4.0.jar:2.4.0]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:785) [spring-boot-2.4.0.jar:2.4.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:333) [spring-boot-2.4.0.jar:2.4.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1309) [spring-boot-2.4.0.jar:2.4.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1298) [spring-boot-2.4.0.jar:2.4.0]
+	at com.github.primeiroprojetospringbatch.PrimeiroprojetospringbatchApplication.main(PrimeiroprojetospringbatchApplication.java:10) [classes/:?]
+Caused by: org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'org.springframework.batch.item.file.FlatFileItemReader<?>' available: expected single matching bean but found 3: ArquivosMultiplosFormatosReader,leituraArquivoLarguraFixaReader,leituraArquivoDelimitadoReader
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveNotUnique(DependencyDescriptor.java:220) ~[spring-beans-5.3.1.jar:5.3.1]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1345) ~[spring-beans-5.3.1.jar:5.3.1]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1287) ~[spring-beans-5.3.1.jar:5.3.1]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:885) ~[spring-beans-5.3.1.jar:5.3.1]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:789) ~[spring-beans-5.3.1.jar:5.3.1]
+	... 44 more
+2020-11-22 23:14:40,553 INFO o.s.b.c.s.AbstractStep [main] Step: [leituraArquivoLarguraFixaStep] executed in 37ms
+2020-11-22 23:14:40,560 ERROR o.s.b.c.s.AbstractStep [main] Exception while closing step execution resources in step leituraArquivoLarguraFixaStep in job leituraArquivoLarguraFixaJob
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'scopedTarget.MultiplosArquivosClienteTransacaoReader' defined in class path resource [com/github/primeiroprojetospringbatch/reader/MultiplosArquivosClienteTransacaoReaderConfig.class]: Unsatisfied dependency expressed through method 'MultiplosArquivosClienteTransacaoReader' parameter 1; nested exception is org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'org.springframework.batch.item.file.FlatFileItemReader<?>' available: expected single matching bean but found 3: ArquivosMultiplosFormatosReader,leituraArquivoLarguraFixaReader,leituraArquivoDelimitadoReader
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:798) ~[spring-beans-5.3.1.jar:5.3.1]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:539) ~[spring-beans-5.3.1.jar:5.3.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1336) ~[spring-beans-5.3.1.jar:5.3.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1179) ~[spring-beans-5.3.1.jar:5.3.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:571) ~[spring-beans-5.3.1.jar:5.3.1]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:531) ~[spring-beans-5.3.1.jar:5.3.1]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$1(AbstractBeanFactory.java:374) ~[spring-beans-5.3.1.jar:5.3.1]
+	at org.springframework.batch.core.scope.StepScope.get(StepScope.java:113) ~[spring-batch-core-4.3.0.jar:4.3.0]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:371) ~[spring-beans-5.3.1.jar:5.3.1]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.1.jar:5.3.1]
+	at org.springframework.aop.target.SimpleBeanTargetSource.getTarget(SimpleBeanTargetSource.java:35) ~[spring-aop-5.3.1.jar:5.3.1]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:675) ~[spring-aop-5.3.1.jar:5.3.1]
+	at org.springframework.batch.item.file.MultiResourceItemReader$$EnhancerBySpringCGLIB$$d861c98a.close(<generated>) ~[spring-batch-infrastructure-4.3.0.jar:4.3.0]
+	at org.springframework.batch.item.support.CompositeItemStream.close(CompositeItemStream.java:90) ~[spring-batch-infrastructure-4.3.0.jar:4.3.0]
+	at org.springframework.batch.core.step.tasklet.TaskletStep.close(TaskletStep.java:306) ~[spring-batch-core-4.3.0.jar:4.3.0]
+	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:286) [spring-batch-core-4.3.0.jar:4.3.0]
+	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:148) [spring-batch-core-4.3.0.jar:4.3.0]
+	at org.springframework.batch.core.job.AbstractJob.handleStep(AbstractJob.java:411) [spring-batch-core-4.3.0.jar:4.3.0]
+	at org.springframework.batch.core.job.SimpleJob.doExecute(SimpleJob.java:136) [spring-batch-core-4.3.0.jar:4.3.0]
+	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:320) [spring-batch-core-4.3.0.jar:4.3.0]
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:147) [spring-batch-core-4.3.0.jar:4.3.0]
+	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:50) [spring-core-5.3.1.jar:5.3.1]
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:140) [spring-batch-core-4.3.0.jar:4.3.0]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_271]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_271]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_271]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_271]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) [spring-aop-5.3.1.jar:5.3.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198) [spring-aop-5.3.1.jar:5.3.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) [spring-aop-5.3.1.jar:5.3.1]
+	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:128) [spring-batch-core-4.3.0.jar:4.3.0]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.3.1.jar:5.3.1]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) [spring-aop-5.3.1.jar:5.3.1]
+	at com.sun.proxy.$Proxy68.run(Unknown Source) [?:?]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.execute(JobLauncherApplicationRunner.java:199) [spring-boot-autoconfigure-2.4.0.jar:2.4.0]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.executeLocalJobs(JobLauncherApplicationRunner.java:173) [spring-boot-autoconfigure-2.4.0.jar:2.4.0]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.launchJobFromProperties(JobLauncherApplicationRunner.java:160) [spring-boot-autoconfigure-2.4.0.jar:2.4.0]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:155) [spring-boot-autoconfigure-2.4.0.jar:2.4.0]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:150) [spring-boot-autoconfigure-2.4.0.jar:2.4.0]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:795) [spring-boot-2.4.0.jar:2.4.0]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:785) [spring-boot-2.4.0.jar:2.4.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:333) [spring-boot-2.4.0.jar:2.4.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1309) [spring-boot-2.4.0.jar:2.4.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1298) [spring-boot-2.4.0.jar:2.4.0]
+	at com.github.primeiroprojetospringbatch.PrimeiroprojetospringbatchApplication.main(PrimeiroprojetospringbatchApplication.java:10) [classes/:?]
+Caused by: org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'org.springframework.batch.item.file.FlatFileItemReader<?>' available: expected single matching bean but found 3: ArquivosMultiplosFormatosReader,leituraArquivoLarguraFixaReader,leituraArquivoDelimitadoReader
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveNotUnique(DependencyDescriptor.java:220) ~[spring-beans-5.3.1.jar:5.3.1]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1345) ~[spring-beans-5.3.1.jar:5.3.1]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1287) ~[spring-beans-5.3.1.jar:5.3.1]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:885) ~[spring-beans-5.3.1.jar:5.3.1]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:789) ~[spring-beans-5.3.1.jar:5.3.1]
+	... 44 more
+2020-11-22 23:14:40,571 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=leituraArquivoLarguraFixaJob]] completed with the following parameters: [{arquivosClientes=file:../Files/clientes*}] and the following status: [FAILED] in 79ms
+2020-11-22 23:15:40,330 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-22 23:15:40,333 INFO o.s.s.c.ThreadPoolTaskExecutor [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-22 23:24:52,078 INFO c.g.p.PrimeiroprojetospringbatchApplication [main] Starting PrimeiroprojetospringbatchApplication using Java 1.8.0_271 on DESKTOP-84AAG7T with PID 12636 (F:\Downloads\Projetos_Intellij\Spring-Batch\Curso para desenvolvimento de jobs com Spring Batch\PrimeiroProjeto\target\classes started by Bergo in F:\Downloads\Projetos_Intellij\Spring-Batch\Curso para desenvolvimento de jobs com Spring Batch\PrimeiroProjeto)
+2020-11-22 23:24:52,082 INFO c.g.p.PrimeiroprojetospringbatchApplication [main] No active profile set, falling back to default profiles: default
+2020-11-22 23:24:52,495 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-11-22 23:24:52,512 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 8 ms. Found 0 JPA repository interfaces.
+2020-11-22 23:24:52,612 INFO o.s.c.a.ConfigurationClassEnhancer [main] @Bean method PropsConfig.config is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2020-11-22 23:24:52,818 INFO o.s.s.c.ThreadPoolTaskExecutor [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-22 23:24:53,321 INFO o.h.j.i.u.LogHelper [task-1] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-22 23:24:53,450 INFO o.h.Version [task-1] HHH000412: Hibernate ORM core version 5.4.23.Final
+2020-11-22 23:24:53,597 INFO o.h.a.c.Version [task-1] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-11-22 23:24:53,608 INFO o.s.b.c.r.s.JobRepositoryFactoryBean [main] No database type set, using meta data indicating: MYSQL
+2020-11-22 23:24:53,688 INFO o.s.b.c.l.s.SimpleJobLauncher [main] No TaskExecutor has been set, defaulting to synchronous executor.
+2020-11-22 23:24:53,715 INFO o.h.d.Dialect [task-1] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-11-22 23:24:53,770 INFO o.s.d.r.c.DeferredRepositoryInitializationListener [main] Triggering deferred initialization of Spring Data repositories…
+2020-11-22 23:24:53,771 INFO o.s.d.r.c.DeferredRepositoryInitializationListener [main] Spring Data repositories initialized!
+2020-11-22 23:24:53,778 INFO c.g.p.PrimeiroprojetospringbatchApplication [main] Started PrimeiroprojetospringbatchApplication in 2.407 seconds (JVM running for 3.351)
+2020-11-22 23:24:53,893 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [task-1] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-22 23:24:53,906 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [task-1] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-22 23:24:54,065 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=leituraArquivoLarguraFixaJob]] launched with the following parameters: [{arquivosClientes=file:../Files/clientes*}]
+2020-11-22 23:24:54,109 INFO o.s.b.c.j.SimpleStepHandler [main] Executing step: [leituraArquivoLarguraFixaStep]
+2020-11-22 23:24:54,270 INFO o.s.b.c.s.AbstractStep [main] Step: [leituraArquivoLarguraFixaStep] executed in 161ms
+2020-11-22 23:24:54,282 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=leituraArquivoLarguraFixaJob]] completed with the following parameters: [{arquivosClientes=file:../Files/clientes*}] and the following status: [COMPLETED] in 194ms
+2020-11-22 23:25:18,770 INFO c.g.p.PrimeiroprojetospringbatchApplication [main] Starting PrimeiroprojetospringbatchApplication using Java 1.8.0_271 on DESKTOP-84AAG7T with PID 9432 (F:\Downloads\Projetos_Intellij\Spring-Batch\Curso para desenvolvimento de jobs com Spring Batch\PrimeiroProjeto\target\classes started by Bergo in F:\Downloads\Projetos_Intellij\Spring-Batch\Curso para desenvolvimento de jobs com Spring Batch\PrimeiroProjeto)
+2020-11-22 23:25:18,774 INFO c.g.p.PrimeiroprojetospringbatchApplication [main] No active profile set, falling back to default profiles: default
+2020-11-22 23:25:19,207 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-11-22 23:25:19,223 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 8 ms. Found 0 JPA repository interfaces.
+2020-11-22 23:25:19,327 INFO o.s.c.a.ConfigurationClassEnhancer [main] @Bean method PropsConfig.config is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2020-11-22 23:25:19,533 INFO o.s.s.c.ThreadPoolTaskExecutor [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-22 23:25:20,021 INFO o.h.j.i.u.LogHelper [task-1] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-22 23:25:20,158 INFO o.h.Version [task-1] HHH000412: Hibernate ORM core version 5.4.23.Final
+2020-11-22 23:25:20,303 INFO o.s.b.c.r.s.JobRepositoryFactoryBean [main] No database type set, using meta data indicating: MYSQL
+2020-11-22 23:25:20,308 INFO o.h.a.c.Version [task-1] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-11-22 23:25:20,384 INFO o.s.b.c.l.s.SimpleJobLauncher [main] No TaskExecutor has been set, defaulting to synchronous executor.
+2020-11-22 23:25:20,428 INFO o.h.d.Dialect [task-1] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-11-22 23:25:20,472 INFO o.s.d.r.c.DeferredRepositoryInitializationListener [main] Triggering deferred initialization of Spring Data repositories…
+2020-11-22 23:25:20,473 INFO o.s.d.r.c.DeferredRepositoryInitializationListener [main] Spring Data repositories initialized!
+2020-11-22 23:25:20,480 INFO c.g.p.PrimeiroprojetospringbatchApplication [main] Started PrimeiroprojetospringbatchApplication in 2.43 seconds (JVM running for 3.494)
+2020-11-22 23:25:20,619 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [task-1] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-22 23:25:20,631 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [task-1] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-22 23:25:20,773 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-22 23:25:20,775 INFO o.s.s.c.ThreadPoolTaskExecutor [main] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-22 23:28:48,680 INFO c.g.p.PrimeiroprojetospringbatchApplication [main] Starting PrimeiroprojetospringbatchApplication using Java 1.8.0_271 on DESKTOP-84AAG7T with PID 1640 (F:\Downloads\Projetos_Intellij\Spring-Batch\Curso para desenvolvimento de jobs com Spring Batch\PrimeiroProjeto\target\classes started by Bergo in F:\Downloads\Projetos_Intellij\Spring-Batch\Curso para desenvolvimento de jobs com Spring Batch\PrimeiroProjeto)
+2020-11-22 23:28:48,685 INFO c.g.p.PrimeiroprojetospringbatchApplication [main] No active profile set, falling back to default profiles: default
+2020-11-22 23:28:49,182 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-11-22 23:28:49,198 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 8 ms. Found 0 JPA repository interfaces.
+2020-11-22 23:28:49,300 INFO o.s.c.a.ConfigurationClassEnhancer [main] @Bean method PropsConfig.config is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2020-11-22 23:28:49,517 INFO o.s.s.c.ThreadPoolTaskExecutor [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-22 23:28:50,061 INFO o.h.j.i.u.LogHelper [task-1] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-22 23:28:50,179 INFO o.h.Version [task-1] HHH000412: Hibernate ORM core version 5.4.23.Final
+2020-11-22 23:28:50,329 INFO o.h.a.c.Version [task-1] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-11-22 23:28:50,460 INFO o.h.d.Dialect [task-1] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-11-22 23:28:50,679 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [task-1] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-22 23:28:50,692 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [task-1] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-22 23:28:50,703 INFO o.s.b.c.r.s.JobRepositoryFactoryBean [main] No database type set, using meta data indicating: MYSQL
+2020-11-22 23:28:50,790 INFO o.s.b.c.l.s.SimpleJobLauncher [main] No TaskExecutor has been set, defaulting to synchronous executor.
+2020-11-22 23:28:50,883 INFO o.s.d.r.c.DeferredRepositoryInitializationListener [main] Triggering deferred initialization of Spring Data repositories…
+2020-11-22 23:28:50,883 INFO o.s.d.r.c.DeferredRepositoryInitializationListener [main] Spring Data repositories initialized!
+2020-11-22 23:28:50,892 INFO c.g.p.PrimeiroprojetospringbatchApplication [main] Started PrimeiroprojetospringbatchApplication in 2.905 seconds (JVM running for 3.892)
+2020-11-22 23:28:51,024 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=leituraArquivoLarguraFixaJob]] launched with the following parameters: [{arquivosClientes=file:../Files/clientes*}]
+2020-11-22 23:28:51,070 INFO o.s.b.c.j.SimpleStepHandler [main] Executing step: [leituraArquivoLarguraFixaStep]
+2020-11-22 23:28:51,203 INFO o.s.b.c.s.AbstractStep [main] Step: [leituraArquivoLarguraFixaStep] executed in 133ms
+2020-11-22 23:28:51,220 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=leituraArquivoLarguraFixaJob]] completed with the following parameters: [{arquivosClientes=file:../Files/clientes*}] and the following status: [COMPLETED] in 171ms
+2020-11-22 23:29:50,705 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-22 23:29:50,708 INFO o.s.s.c.ThreadPoolTaskExecutor [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-22 23:52:44,808 INFO c.g.p.PrimeiroprojetospringbatchApplication [main] Starting PrimeiroprojetospringbatchApplication using Java 1.8.0_271 on DESKTOP-84AAG7T with PID 14944 (F:\Downloads\Projetos_Intellij\Spring-Batch\Curso para desenvolvimento de jobs com Spring Batch\PrimeiroProjeto\target\classes started by Bergo in F:\Downloads\Projetos_Intellij\Spring-Batch\Curso para desenvolvimento de jobs com Spring Batch\PrimeiroProjeto)
+2020-11-22 23:52:44,811 INFO c.g.p.PrimeiroprojetospringbatchApplication [main] No active profile set, falling back to default profiles: default
+2020-11-22 23:52:45,248 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-11-22 23:52:45,266 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 9 ms. Found 0 JPA repository interfaces.
+2020-11-22 23:52:45,371 INFO o.s.c.a.ConfigurationClassEnhancer [main] @Bean method PropsConfig.config is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2020-11-22 23:52:45,595 INFO o.s.s.c.ThreadPoolTaskExecutor [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-22 23:52:46,107 INFO o.h.j.i.u.LogHelper [task-1] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-22 23:52:46,240 INFO o.h.Version [task-1] HHH000412: Hibernate ORM core version 5.4.23.Final
+2020-11-22 23:52:46,389 INFO o.h.a.c.Version [task-1] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-11-22 23:52:46,403 INFO o.s.b.c.r.s.JobRepositoryFactoryBean [main] No database type set, using meta data indicating: MYSQL
+2020-11-22 23:52:46,494 INFO o.s.b.c.l.s.SimpleJobLauncher [main] No TaskExecutor has been set, defaulting to synchronous executor.
+2020-11-22 23:52:46,516 INFO o.h.d.Dialect [task-1] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-11-22 23:52:46,581 INFO o.s.d.r.c.DeferredRepositoryInitializationListener [main] Triggering deferred initialization of Spring Data repositories…
+2020-11-22 23:52:46,581 INFO o.s.d.r.c.DeferredRepositoryInitializationListener [main] Spring Data repositories initialized!
+2020-11-22 23:52:46,589 INFO c.g.p.PrimeiroprojetospringbatchApplication [main] Started PrimeiroprojetospringbatchApplication in 2.518 seconds (JVM running for 3.496)
+2020-11-22 23:52:46,708 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [task-1] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-22 23:52:46,719 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [task-1] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-22 23:52:46,874 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-22 23:52:46,876 INFO o.s.s.c.ThreadPoolTaskExecutor [main] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-22 23:55:16,964 INFO c.g.p.PrimeiroprojetospringbatchApplication [main] Starting PrimeiroprojetospringbatchApplication using Java 1.8.0_271 on DESKTOP-84AAG7T with PID 6888 (F:\Downloads\Projetos_Intellij\Spring-Batch\Curso para desenvolvimento de jobs com Spring Batch\PrimeiroProjeto\target\classes started by Bergo in F:\Downloads\Projetos_Intellij\Spring-Batch\Curso para desenvolvimento de jobs com Spring Batch\PrimeiroProjeto)
+2020-11-22 23:55:16,968 INFO c.g.p.PrimeiroprojetospringbatchApplication [main] No active profile set, falling back to default profiles: default
+2020-11-22 23:55:17,364 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-11-22 23:55:17,380 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 8 ms. Found 0 JPA repository interfaces.
+2020-11-22 23:55:17,479 INFO o.s.c.a.ConfigurationClassEnhancer [main] @Bean method PropsConfig.config is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2020-11-22 23:55:17,679 INFO o.s.s.c.ThreadPoolTaskExecutor [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-22 23:55:18,158 INFO o.h.j.i.u.LogHelper [task-1] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-22 23:55:18,284 INFO o.h.Version [task-1] HHH000412: Hibernate ORM core version 5.4.23.Final
+2020-11-22 23:55:18,416 INFO o.h.a.c.Version [task-1] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-11-22 23:55:18,436 INFO o.s.b.c.r.s.JobRepositoryFactoryBean [main] No database type set, using meta data indicating: MYSQL
+2020-11-22 23:55:18,515 INFO o.s.b.c.l.s.SimpleJobLauncher [main] No TaskExecutor has been set, defaulting to synchronous executor.
+2020-11-22 23:55:18,529 INFO o.h.d.Dialect [task-1] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-11-22 23:55:18,588 INFO o.s.d.r.c.DeferredRepositoryInitializationListener [main] Triggering deferred initialization of Spring Data repositories…
+2020-11-22 23:55:18,589 INFO o.s.d.r.c.DeferredRepositoryInitializationListener [main] Spring Data repositories initialized!
+2020-11-22 23:55:18,596 INFO c.g.p.PrimeiroprojetospringbatchApplication [main] Started PrimeiroprojetospringbatchApplication in 2.278 seconds (JVM running for 3.14)
+2020-11-22 23:55:18,697 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [task-1] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-22 23:55:18,708 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [task-1] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-22 23:55:18,852 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-22 23:55:18,854 INFO o.s.s.c.ThreadPoolTaskExecutor [main] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-22 23:55:39,633 INFO c.g.p.PrimeiroprojetospringbatchApplication [main] Starting PrimeiroprojetospringbatchApplication using Java 1.8.0_271 on DESKTOP-84AAG7T with PID 4452 (F:\Downloads\Projetos_Intellij\Spring-Batch\Curso para desenvolvimento de jobs com Spring Batch\PrimeiroProjeto\target\classes started by Bergo in F:\Downloads\Projetos_Intellij\Spring-Batch\Curso para desenvolvimento de jobs com Spring Batch\PrimeiroProjeto)
+2020-11-22 23:55:39,637 INFO c.g.p.PrimeiroprojetospringbatchApplication [main] No active profile set, falling back to default profiles: default
+2020-11-22 23:55:40,042 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-11-22 23:55:40,058 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 8 ms. Found 0 JPA repository interfaces.
+2020-11-22 23:55:40,157 INFO o.s.c.a.ConfigurationClassEnhancer [main] @Bean method PropsConfig.config is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2020-11-22 23:55:40,357 INFO o.s.s.c.ThreadPoolTaskExecutor [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-22 23:55:40,835 INFO o.h.j.i.u.LogHelper [task-1] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-22 23:55:40,966 INFO o.h.Version [task-1] HHH000412: Hibernate ORM core version 5.4.23.Final
+2020-11-22 23:55:41,099 INFO o.h.a.c.Version [task-1] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-11-22 23:55:41,117 INFO o.s.b.c.r.s.JobRepositoryFactoryBean [main] No database type set, using meta data indicating: MYSQL
+2020-11-22 23:55:41,196 INFO o.s.b.c.l.s.SimpleJobLauncher [main] No TaskExecutor has been set, defaulting to synchronous executor.
+2020-11-22 23:55:41,210 INFO o.h.d.Dialect [task-1] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-11-22 23:55:41,270 INFO o.s.d.r.c.DeferredRepositoryInitializationListener [main] Triggering deferred initialization of Spring Data repositories…
+2020-11-22 23:55:41,270 INFO o.s.d.r.c.DeferredRepositoryInitializationListener [main] Spring Data repositories initialized!
+2020-11-22 23:55:41,277 INFO c.g.p.PrimeiroprojetospringbatchApplication [main] Started PrimeiroprojetospringbatchApplication in 2.305 seconds (JVM running for 3.22)
+2020-11-22 23:55:41,377 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [task-1] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-22 23:55:41,387 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [task-1] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-22 23:55:41,501 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=leituraArquivoLarguraFixaJob]] launched with the following parameters: [{}]
+2020-11-22 23:55:41,539 INFO o.s.b.c.j.SimpleStepHandler [main] Executing step: [leituraArquivoLarguraFixaStep]
+2020-11-22 23:55:41,603 INFO o.s.b.c.s.AbstractStep [main] Step: [leituraArquivoLarguraFixaStep] executed in 62ms
+2020-11-22 23:55:41,616 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=leituraArquivoLarguraFixaJob]] completed with the following parameters: [{}] and the following status: [COMPLETED] in 94ms
+2020-11-22 23:56:41,414 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-22 23:56:41,418 INFO o.s.s.c.ThreadPoolTaskExecutor [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-23 00:16:33,507 INFO c.g.p.PrimeiroprojetospringbatchApplication [main] Starting PrimeiroprojetospringbatchApplication using Java 1.8.0_271 on DESKTOP-84AAG7T with PID 14032 (F:\Downloads\Projetos_Intellij\Spring-Batch\Curso para desenvolvimento de jobs com Spring Batch\PrimeiroProjeto\target\classes started by Bergo in F:\Downloads\Projetos_Intellij\Spring-Batch\Curso para desenvolvimento de jobs com Spring Batch\PrimeiroProjeto)
+2020-11-23 00:16:33,511 INFO c.g.p.PrimeiroprojetospringbatchApplication [main] No active profile set, falling back to default profiles: default
+2020-11-23 00:16:33,943 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-11-23 00:16:33,961 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 9 ms. Found 0 JPA repository interfaces.
+2020-11-23 00:16:34,067 INFO o.s.c.a.ConfigurationClassEnhancer [main] @Bean method PropsConfig.config is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2020-11-23 00:16:34,285 INFO o.s.s.c.ThreadPoolTaskExecutor [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-23 00:16:34,793 INFO o.h.j.i.u.LogHelper [task-1] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-23 00:16:34,928 INFO o.h.Version [task-1] HHH000412: Hibernate ORM core version 5.4.23.Final
+2020-11-23 00:16:35,079 INFO o.h.a.c.Version [task-1] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-11-23 00:16:35,133 INFO o.s.b.c.r.s.JobRepositoryFactoryBean [main] No database type set, using meta data indicating: MYSQL
+2020-11-23 00:16:35,205 INFO o.h.d.Dialect [task-1] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-11-23 00:16:35,224 INFO o.s.b.c.l.s.SimpleJobLauncher [main] No TaskExecutor has been set, defaulting to synchronous executor.
+2020-11-23 00:16:35,321 INFO o.s.d.r.c.DeferredRepositoryInitializationListener [main] Triggering deferred initialization of Spring Data repositories…
+2020-11-23 00:16:35,321 INFO o.s.d.r.c.DeferredRepositoryInitializationListener [main] Spring Data repositories initialized!
+2020-11-23 00:16:35,328 INFO c.g.p.PrimeiroprojetospringbatchApplication [main] Started PrimeiroprojetospringbatchApplication in 2.536 seconds (JVM running for 3.493)
+2020-11-23 00:16:35,390 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [task-1] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-23 00:16:35,402 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [task-1] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-23 00:16:35,556 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=leituraArquivoLarguraFixaJob]] launched with the following parameters: [{}]
+2020-11-23 00:16:35,590 INFO o.s.b.c.j.SimpleStepHandler [main] Step already complete or not restartable, so no action to execute: StepExecution: id=2, version=5, name=leituraArquivoLarguraFixaStep, status=COMPLETED, exitStatus=COMPLETED, readCount=2, filterCount=0, writeCount=2 readSkipCount=0, writeSkipCount=0, processSkipCount=0, commitCount=3, rollbackCount=0, exitDescription=
+2020-11-23 00:16:35,601 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=leituraArquivoLarguraFixaJob]] completed with the following parameters: [{}] and the following status: [COMPLETED] in 19ms
+2020-11-23 00:17:35,429 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-23 00:17:35,432 INFO o.s.s.c.ThreadPoolTaskExecutor [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-23 00:17:40,864 INFO c.g.p.PrimeiroprojetospringbatchApplication [main] Starting PrimeiroprojetospringbatchApplication using Java 1.8.0_271 on DESKTOP-84AAG7T with PID 2076 (F:\Downloads\Projetos_Intellij\Spring-Batch\Curso para desenvolvimento de jobs com Spring Batch\PrimeiroProjeto\target\classes started by Bergo in F:\Downloads\Projetos_Intellij\Spring-Batch\Curso para desenvolvimento de jobs com Spring Batch\PrimeiroProjeto)
+2020-11-23 00:17:40,868 INFO c.g.p.PrimeiroprojetospringbatchApplication [main] No active profile set, falling back to default profiles: default
+2020-11-23 00:17:41,271 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-11-23 00:17:41,287 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 8 ms. Found 0 JPA repository interfaces.
+2020-11-23 00:17:41,388 INFO o.s.c.a.ConfigurationClassEnhancer [main] @Bean method PropsConfig.config is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2020-11-23 00:17:41,587 INFO o.s.s.c.ThreadPoolTaskExecutor [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-23 00:17:42,085 INFO o.h.j.i.u.LogHelper [task-1] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-23 00:17:42,201 INFO o.h.Version [task-1] HHH000412: Hibernate ORM core version 5.4.23.Final
+2020-11-23 00:17:42,335 INFO o.h.a.c.Version [task-1] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-11-23 00:17:42,394 INFO o.s.b.c.r.s.JobRepositoryFactoryBean [main] No database type set, using meta data indicating: MYSQL
+2020-11-23 00:17:42,468 INFO o.h.d.Dialect [task-1] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-11-23 00:17:42,483 INFO o.s.b.c.l.s.SimpleJobLauncher [main] No TaskExecutor has been set, defaulting to synchronous executor.
+2020-11-23 00:17:42,554 INFO o.s.d.r.c.DeferredRepositoryInitializationListener [main] Triggering deferred initialization of Spring Data repositories…
+2020-11-23 00:17:42,555 INFO o.s.d.r.c.DeferredRepositoryInitializationListener [main] Spring Data repositories initialized!
+2020-11-23 00:17:42,561 INFO c.g.p.PrimeiroprojetospringbatchApplication [main] Started PrimeiroprojetospringbatchApplication in 2.356 seconds (JVM running for 3.235)
+2020-11-23 00:17:42,625 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [task-1] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-23 00:17:42,635 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [task-1] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-23 00:17:42,781 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=leituraArquivoLarguraFixaJob]] launched with the following parameters: [{}]
+2020-11-23 00:17:42,815 INFO o.s.b.c.j.SimpleStepHandler [main] Step already complete or not restartable, so no action to execute: StepExecution: id=2, version=5, name=leituraArquivoLarguraFixaStep, status=COMPLETED, exitStatus=COMPLETED, readCount=2, filterCount=0, writeCount=2 readSkipCount=0, writeSkipCount=0, processSkipCount=0, commitCount=3, rollbackCount=0, exitDescription=
+2020-11-23 00:17:42,827 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=leituraArquivoLarguraFixaJob]] completed with the following parameters: [{}] and the following status: [COMPLETED] in 20ms
+2020-11-23 00:18:42,652 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-23 00:18:42,656 INFO o.s.s.c.ThreadPoolTaskExecutor [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-23 00:19:50,430 INFO c.g.p.PrimeiroprojetospringbatchApplication [main] Starting PrimeiroprojetospringbatchApplication using Java 1.8.0_271 on DESKTOP-84AAG7T with PID 12884 (F:\Downloads\Projetos_Intellij\Spring-Batch\Curso para desenvolvimento de jobs com Spring Batch\PrimeiroProjeto\target\classes started by Bergo in F:\Downloads\Projetos_Intellij\Spring-Batch\Curso para desenvolvimento de jobs com Spring Batch\PrimeiroProjeto)
+2020-11-23 00:19:50,433 INFO c.g.p.PrimeiroprojetospringbatchApplication [main] No active profile set, falling back to default profiles: default
+2020-11-23 00:19:50,882 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-11-23 00:19:50,904 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 11 ms. Found 0 JPA repository interfaces.
+2020-11-23 00:19:51,031 INFO o.s.c.a.ConfigurationClassEnhancer [main] @Bean method PropsConfig.config is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2020-11-23 00:19:51,276 INFO o.s.s.c.ThreadPoolTaskExecutor [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-23 00:19:51,825 INFO o.h.j.i.u.LogHelper [task-1] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-23 00:19:51,935 INFO o.h.Version [task-1] HHH000412: Hibernate ORM core version 5.4.23.Final
+2020-11-23 00:19:52,090 INFO o.h.a.c.Version [task-1] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-11-23 00:19:52,243 INFO o.h.d.Dialect [task-1] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-11-23 00:19:52,442 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [task-1] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-23 00:19:52,455 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [task-1] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-23 00:19:52,504 INFO o.s.b.c.r.s.JobRepositoryFactoryBean [main] No database type set, using meta data indicating: MYSQL
+2020-11-23 00:19:52,594 INFO o.s.b.c.l.s.SimpleJobLauncher [main] No TaskExecutor has been set, defaulting to synchronous executor.
+2020-11-23 00:19:52,693 INFO o.s.d.r.c.DeferredRepositoryInitializationListener [main] Triggering deferred initialization of Spring Data repositories…
+2020-11-23 00:19:52,693 INFO o.s.d.r.c.DeferredRepositoryInitializationListener [main] Spring Data repositories initialized!
+2020-11-23 00:19:52,702 INFO c.g.p.PrimeiroprojetospringbatchApplication [main] Started PrimeiroprojetospringbatchApplication in 2.989 seconds (JVM running for 4.076)
+2020-11-23 00:19:52,835 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=leituraArquivoLarguraFixaJob]] launched with the following parameters: [{}]
+2020-11-23 00:19:52,880 INFO o.s.b.c.j.SimpleStepHandler [main] Executing step: [leituraArquivoLarguraFixaStep]
+2020-11-23 00:19:52,982 ERROR o.s.b.c.s.AbstractStep [main] Encountered an error executing step leituraArquivoLarguraFixaStep in job leituraArquivoLarguraFixaJob
+org.springframework.jdbc.BadSqlGrammarException: StatementCallback; bad SQL grammar [SELECT * FROM form cliente ORDER BY email ASC LIMIT 1]; nested exception is java.sql.SQLSyntaxErrorException: Table 'app.form' doesn't exist
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:239) ~[spring-jdbc-5.3.1.jar:5.3.1]
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:70) ~[spring-jdbc-5.3.1.jar:5.3.1]
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1541) ~[spring-jdbc-5.3.1.jar:5.3.1]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:393) ~[spring-jdbc-5.3.1.jar:5.3.1]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:465) ~[spring-jdbc-5.3.1.jar:5.3.1]
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:475) ~[spring-jdbc-5.3.1.jar:5.3.1]
+	at org.springframework.batch.item.database.JdbcPagingItemReader.doReadPage(JdbcPagingItemReader.java:210) ~[spring-batch-infrastructure-4.3.0.jar:4.3.0]
+	at org.springframework.batch.item.database.AbstractPagingItemReader.doRead(AbstractPagingItemReader.java:110) ~[spring-batch-infrastructure-4.3.0.jar:4.3.0]
+	at org.springframework.batch.item.support.AbstractItemCountingItemStreamItemReader.read(AbstractItemCountingItemStreamItemReader.java:93) ~[spring-batch-infrastructure-4.3.0.jar:4.3.0]
+	at org.springframework.batch.core.step.item.SimpleChunkProvider.doRead(SimpleChunkProvider.java:99) ~[spring-batch-core-4.3.0.jar:4.3.0]
+	at org.springframework.batch.core.step.item.SimpleChunkProvider.read(SimpleChunkProvider.java:180) ~[spring-batch-core-4.3.0.jar:4.3.0]
+	at org.springframework.batch.core.step.item.SimpleChunkProvider$1.doInIteration(SimpleChunkProvider.java:126) ~[spring-batch-core-4.3.0.jar:4.3.0]
+	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:375) ~[spring-batch-infrastructure-4.3.0.jar:4.3.0]
+	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215) ~[spring-batch-infrastructure-4.3.0.jar:4.3.0]
+	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:145) ~[spring-batch-infrastructure-4.3.0.jar:4.3.0]
+	at org.springframework.batch.core.step.item.SimpleChunkProvider.provide(SimpleChunkProvider.java:118) ~[spring-batch-core-4.3.0.jar:4.3.0]
+	at org.springframework.batch.core.step.item.ChunkOrientedTasklet.execute(ChunkOrientedTasklet.java:71) ~[spring-batch-core-4.3.0.jar:4.3.0]
+	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:407) ~[spring-batch-core-4.3.0.jar:4.3.0]
+	at org.springframework.batch.core.step.tasklet.TaskletStep$ChunkTransactionCallback.doInTransaction(TaskletStep.java:331) ~[spring-batch-core-4.3.0.jar:4.3.0]
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140) ~[spring-tx-5.3.1.jar:5.3.1]
+	at org.springframework.batch.core.step.tasklet.TaskletStep$2.doInChunkContext(TaskletStep.java:273) ~[spring-batch-core-4.3.0.jar:4.3.0]
+	at org.springframework.batch.core.scope.context.StepContextRepeatCallback.doInIteration(StepContextRepeatCallback.java:82) ~[spring-batch-core-4.3.0.jar:4.3.0]
+	at org.springframework.batch.repeat.support.RepeatTemplate.getNextResult(RepeatTemplate.java:375) ~[spring-batch-infrastructure-4.3.0.jar:4.3.0]
+	at org.springframework.batch.repeat.support.RepeatTemplate.executeInternal(RepeatTemplate.java:215) ~[spring-batch-infrastructure-4.3.0.jar:4.3.0]
+	at org.springframework.batch.repeat.support.RepeatTemplate.iterate(RepeatTemplate.java:145) ~[spring-batch-infrastructure-4.3.0.jar:4.3.0]
+	at org.springframework.batch.core.step.tasklet.TaskletStep.doExecute(TaskletStep.java:258) ~[spring-batch-core-4.3.0.jar:4.3.0]
+	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:208) [spring-batch-core-4.3.0.jar:4.3.0]
+	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:148) [spring-batch-core-4.3.0.jar:4.3.0]
+	at org.springframework.batch.core.job.AbstractJob.handleStep(AbstractJob.java:411) [spring-batch-core-4.3.0.jar:4.3.0]
+	at org.springframework.batch.core.job.SimpleJob.doExecute(SimpleJob.java:136) [spring-batch-core-4.3.0.jar:4.3.0]
+	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:320) [spring-batch-core-4.3.0.jar:4.3.0]
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:147) [spring-batch-core-4.3.0.jar:4.3.0]
+	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:50) [spring-core-5.3.1.jar:5.3.1]
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:140) [spring-batch-core-4.3.0.jar:4.3.0]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_271]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_271]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_271]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_271]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:344) [spring-aop-5.3.1.jar:5.3.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:198) [spring-aop-5.3.1.jar:5.3.1]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163) [spring-aop-5.3.1.jar:5.3.1]
+	at org.springframework.batch.core.configuration.annotation.SimpleBatchConfiguration$PassthruAdvice.invoke(SimpleBatchConfiguration.java:128) [spring-batch-core-4.3.0.jar:4.3.0]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) [spring-aop-5.3.1.jar:5.3.1]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:215) [spring-aop-5.3.1.jar:5.3.1]
+	at com.sun.proxy.$Proxy68.run(Unknown Source) [?:?]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.execute(JobLauncherApplicationRunner.java:199) [spring-boot-autoconfigure-2.4.0.jar:2.4.0]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.executeLocalJobs(JobLauncherApplicationRunner.java:173) [spring-boot-autoconfigure-2.4.0.jar:2.4.0]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.launchJobFromProperties(JobLauncherApplicationRunner.java:160) [spring-boot-autoconfigure-2.4.0.jar:2.4.0]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:155) [spring-boot-autoconfigure-2.4.0.jar:2.4.0]
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:150) [spring-boot-autoconfigure-2.4.0.jar:2.4.0]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:795) [spring-boot-2.4.0.jar:2.4.0]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:785) [spring-boot-2.4.0.jar:2.4.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:333) [spring-boot-2.4.0.jar:2.4.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1309) [spring-boot-2.4.0.jar:2.4.0]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1298) [spring-boot-2.4.0.jar:2.4.0]
+	at com.github.primeiroprojetospringbatch.PrimeiroprojetospringbatchApplication.main(PrimeiroprojetospringbatchApplication.java:10) [classes/:?]
+Caused by: java.sql.SQLSyntaxErrorException: Table 'app.form' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.22.jar:8.0.22]
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97) ~[mysql-connector-java-8.0.22.jar:8.0.22]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.22.jar:8.0.22]
+	at com.mysql.cj.jdbc.StatementImpl.executeQuery(StatementImpl.java:1200) ~[mysql-connector-java-8.0.22.jar:8.0.22]
+	at com.zaxxer.hikari.pool.ProxyStatement.executeQuery(ProxyStatement.java:111) ~[HikariCP-3.4.5.jar:?]
+	at com.zaxxer.hikari.pool.HikariProxyStatement.executeQuery(HikariProxyStatement.java) ~[HikariCP-3.4.5.jar:?]
+	at org.springframework.jdbc.core.JdbcTemplate$1QueryStatementCallback.doInStatement(JdbcTemplate.java:452) ~[spring-jdbc-5.3.1.jar:5.3.1]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:381) ~[spring-jdbc-5.3.1.jar:5.3.1]
+	... 52 more
+2020-11-23 00:19:52,989 INFO o.s.b.c.s.AbstractStep [main] Step: [leituraArquivoLarguraFixaStep] executed in 109ms
+2020-11-23 00:19:53,008 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=leituraArquivoLarguraFixaJob]] completed with the following parameters: [{}] and the following status: [FAILED] in 145ms
+2020-11-23 00:20:52,473 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-23 00:20:52,478 INFO o.s.s.c.ThreadPoolTaskExecutor [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-23 00:21:02,760 INFO c.g.p.PrimeiroprojetospringbatchApplication [main] Starting PrimeiroprojetospringbatchApplication using Java 1.8.0_271 on DESKTOP-84AAG7T with PID 12348 (F:\Downloads\Projetos_Intellij\Spring-Batch\Curso para desenvolvimento de jobs com Spring Batch\PrimeiroProjeto\target\classes started by Bergo in F:\Downloads\Projetos_Intellij\Spring-Batch\Curso para desenvolvimento de jobs com Spring Batch\PrimeiroProjeto)
+2020-11-23 00:21:02,764 INFO c.g.p.PrimeiroprojetospringbatchApplication [main] No active profile set, falling back to default profiles: default
+2020-11-23 00:21:03,172 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-11-23 00:21:03,188 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 8 ms. Found 0 JPA repository interfaces.
+2020-11-23 00:21:03,288 INFO o.s.c.a.ConfigurationClassEnhancer [main] @Bean method PropsConfig.config is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2020-11-23 00:21:03,487 INFO o.s.s.c.ThreadPoolTaskExecutor [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-23 00:21:03,974 INFO o.h.j.i.u.LogHelper [task-1] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-23 00:21:04,113 INFO o.h.Version [task-1] HHH000412: Hibernate ORM core version 5.4.23.Final
+2020-11-23 00:21:04,246 INFO o.h.a.c.Version [task-1] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-11-23 00:21:04,301 INFO o.s.b.c.r.s.JobRepositoryFactoryBean [main] No database type set, using meta data indicating: MYSQL
+2020-11-23 00:21:04,367 INFO o.h.d.Dialect [task-1] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-11-23 00:21:04,394 INFO o.s.b.c.l.s.SimpleJobLauncher [main] No TaskExecutor has been set, defaulting to synchronous executor.
+2020-11-23 00:21:04,464 INFO o.s.d.r.c.DeferredRepositoryInitializationListener [main] Triggering deferred initialization of Spring Data repositories…
+2020-11-23 00:21:04,464 INFO o.s.d.r.c.DeferredRepositoryInitializationListener [main] Spring Data repositories initialized!
+2020-11-23 00:21:04,471 INFO c.g.p.PrimeiroprojetospringbatchApplication [main] Started PrimeiroprojetospringbatchApplication in 2.34 seconds (JVM running for 3.256)
+2020-11-23 00:21:04,531 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [task-1] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-23 00:21:04,542 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [task-1] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-23 00:21:04,686 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=leituraArquivoLarguraFixaJob]] launched with the following parameters: [{}]
+2020-11-23 00:21:04,731 INFO o.s.b.c.j.SimpleStepHandler [main] Executing step: [leituraArquivoLarguraFixaStep]
+2020-11-23 00:21:04,817 INFO o.s.b.c.s.AbstractStep [main] Step: [leituraArquivoLarguraFixaStep] executed in 86ms
+2020-11-23 00:21:04,828 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=leituraArquivoLarguraFixaJob]] completed with the following parameters: [{}] and the following status: [COMPLETED] in 121ms
+2020-11-23 00:22:04,553 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-23 00:22:04,555 INFO o.s.s.c.ThreadPoolTaskExecutor [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-23 00:25:45,283 INFO c.g.p.PrimeiroprojetospringbatchApplication [main] Starting PrimeiroprojetospringbatchApplication using Java 1.8.0_271 on DESKTOP-84AAG7T with PID 10252 (F:\Downloads\Projetos_Intellij\Spring-Batch\Curso para desenvolvimento de jobs com Spring Batch\PrimeiroProjeto\target\classes started by Bergo in F:\Downloads\Projetos_Intellij\Spring-Batch\Curso para desenvolvimento de jobs com Spring Batch\PrimeiroProjeto)
+2020-11-23 00:25:45,286 INFO c.g.p.PrimeiroprojetospringbatchApplication [main] No active profile set, falling back to default profiles: default
+2020-11-23 00:25:45,687 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-11-23 00:25:45,703 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 8 ms. Found 0 JPA repository interfaces.
+2020-11-23 00:25:45,806 INFO o.s.c.a.ConfigurationClassEnhancer [main] @Bean method PropsConfig.config is non-static and returns an object assignable to Spring's BeanFactoryPostProcessor interface. This will result in a failure to process annotations such as @Autowired, @Resource and @PostConstruct within the method's declaring @Configuration class. Add the 'static' modifier to this method to avoid these container lifecycle issues; see @Bean javadoc for complete details.
+2020-11-23 00:25:46,012 INFO o.s.s.c.ThreadPoolTaskExecutor [main] Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-23 00:25:46,491 INFO o.h.j.i.u.LogHelper [task-1] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-23 00:25:46,587 INFO o.h.Version [task-1] HHH000412: Hibernate ORM core version 5.4.23.Final
+2020-11-23 00:25:46,725 INFO o.h.a.c.Version [task-1] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2020-11-23 00:25:46,780 INFO o.s.b.c.r.s.JobRepositoryFactoryBean [main] No database type set, using meta data indicating: MYSQL
+2020-11-23 00:25:46,845 INFO o.h.d.Dialect [task-1] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-11-23 00:25:46,863 INFO o.s.b.c.l.s.SimpleJobLauncher [main] No TaskExecutor has been set, defaulting to synchronous executor.
+2020-11-23 00:25:46,946 INFO o.s.d.r.c.DeferredRepositoryInitializationListener [main] Triggering deferred initialization of Spring Data repositories…
+2020-11-23 00:25:46,946 INFO o.s.d.r.c.DeferredRepositoryInitializationListener [main] Spring Data repositories initialized!
+2020-11-23 00:25:46,953 INFO c.g.p.PrimeiroprojetospringbatchApplication [main] Started PrimeiroprojetospringbatchApplication in 2.335 seconds (JVM running for 3.264)
+2020-11-23 00:25:47,014 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [task-1] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-23 00:25:47,024 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [task-1] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-23 00:25:47,162 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=leituraArquivoLarguraFixaJob]] launched with the following parameters: [{}]
+2020-11-23 00:25:47,195 INFO o.s.b.c.j.SimpleStepHandler [main] Step already complete or not restartable, so no action to execute: StepExecution: id=2, version=12, name=leituraArquivoLarguraFixaStep, status=COMPLETED, exitStatus=COMPLETED, readCount=9, filterCount=0, writeCount=9 readSkipCount=0, writeSkipCount=0, processSkipCount=0, commitCount=10, rollbackCount=0, exitDescription=
+2020-11-23 00:25:47,204 INFO o.s.b.c.l.s.SimpleJobLauncher [main] Job: [SimpleJob: [name=leituraArquivoLarguraFixaJob]] completed with the following parameters: [{}] and the following status: [COMPLETED] in 20ms
+2020-11-23 00:26:47,041 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-23 00:26:47,046 INFO o.s.s.c.ThreadPoolTaskExecutor [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'

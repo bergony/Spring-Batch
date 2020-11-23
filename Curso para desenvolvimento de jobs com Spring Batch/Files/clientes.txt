@@ -1,9 +1,0 @@
-0,João,silva,32,joao@test.com
-1,t1c1,Cadeado,50.80
-1,t2c1,TV,1500
-0,Maria,silva,30,maria@test.com
-1,t1c2,Geladeira dublex,2000
-1,t2c2,Mesa,4500
-1,t3c2,sofa,1099.99
-0,Jose,silva,20,jose@test.com
-1,t1c3,Comida no ifood,500.45

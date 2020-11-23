@@ -11,7 +11,7 @@ public class PropsConfig {
     @Bean
     public PropertySourcesPlaceholderConfigurer config(){
         PropertySourcesPlaceholderConfigurer configurer = new PropertySourcesPlaceholderConfigurer();
-        configurer.setLocation(new FileSystemResource("..//config//application.properties.txt"));
+        configurer.setLocation(new FileSystemResource("config//application.properties.txt"));
         return configurer;
     }
 }
