@@ -17,12 +17,12 @@ public class LeituraArquivoLarguraFixaStepConfig {
 
 
     @Bean
-    public Step leituraArquivoLarguraFixaStep(JdbcPagingItemReader<Cliente> jdbcPagingReader,
+    public Step leituraArquivoLarguraFixaStep(JdbcPagingItemReader<Cliente> skipExceptionReader,
                                               ItemWriter<Cliente> leituraArquivoDelimitadoWriter){
         return stepBuilderFactory
                 .get("leituraArquivoLarguraFixaStep")
                 .<Cliente, Cliente>chunk(1)
-                .reader(jdbcPagingReader)
+                .reader(skipExceptionReader)
                 .writer(leituraArquivoDelimitadoWriter)
                 .build();
     }
