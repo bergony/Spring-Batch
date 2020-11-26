@@ -1,4 +1,4 @@
-package com.github.primeiroprojetospringbatch.job;
+package com.springbatch.processadorscript.job;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
@@ -11,19 +11,16 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @EnableBatchProcessing
-public class ArquivoLarguraFixaJobConfig {
-
-    @Autowired
-    private JobBuilderFactory jobBuilderFactory;
-
-    @Bean
-    public Job leituraArquivoLarguraFixaJob(Step leituraArquivoLarguraFixaStep){
-        return  jobBuilderFactory
-                .get("leituraArquivoLarguraFixaJob")
-                .start(leituraArquivoLarguraFixaStep)
-                .incrementer(new RunIdIncrementer())
-                .build();
-    }
-
-
+public class ProcessadorScriptJobConfig {
+	@Autowired
+	private JobBuilderFactory jobBuilderFactory;
+	
+	@Bean
+	public Job processadorScriptJob(Step processadorScriptStep) {
+		return jobBuilderFactory
+				.get("processadorScriptJob")
+				.start(processadorScriptStep)
+				.incrementer(new RunIdIncrementer())
+				.build();
+	}
 }

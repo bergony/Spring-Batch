@@ -1,4 +1,4 @@
-package com.github.primeiroprojetospringbatch.job;
+package com.springbatch.processadorvalidacao.job;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
@@ -9,21 +9,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration
 @EnableBatchProcessing
-public class ArquivoLarguraFixaJobConfig {
-
-    @Autowired
-    private JobBuilderFactory jobBuilderFactory;
-
-    @Bean
-    public Job leituraArquivoLarguraFixaJob(Step leituraArquivoLarguraFixaStep){
-        return  jobBuilderFactory
-                .get("leituraArquivoLarguraFixaJob")
-                .start(leituraArquivoLarguraFixaStep)
-                .incrementer(new RunIdIncrementer())
-                .build();
-    }
-
-
+@Configuration
+public class ProcessadorValidacaoJobConfig {
+	@Autowired
+	private JobBuilderFactory jobBuilderFactory;
+	
+	@Bean
+	public Job processadorValidacaoJob(Step processadorValidacaoStep) {
+		return jobBuilderFactory
+				.get("processadorValidacaoJob")
+				.start(processadorValidacaoStep)
+				.incrementer(new RunIdIncrementer())
+				.build();
+	}
 }

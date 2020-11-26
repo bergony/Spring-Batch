@@ -1,15 +1,29 @@
 package com.github.primeiroprojetospringbatch.dominio;
 
-import java.util.ArrayList;
+import org.hibernate.validator.constraints.Range;
+
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 public class Cliente {
 
+    @NotNull
+    @Size(min = 1, max = 100)
+    @Pattern(regexp = "[a-zA-Z\\s]+", message = "Nome deve ser alfabético")
     private String nome;
+    @NotNull
+    @Size(min = 1, max = 100)
     private String sobrenome;
+    @NotNull
+    @Range(min = 18, max = 200)
     private String idade;
+    @NotNull
+    @Size(min = 1, max = 100)
+    @Pattern(regexp = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$", message = "Email Inválido")
     private String email;
-    private List<Transacao> transacoes = new ArrayList<>();
+
 
     public String getNome() {
         return nome;
@@ -43,14 +57,6 @@ public class Cliente {
         this.email = email;
     }
 
-    public List<Transacao> getTransacoes() {
-        return transacoes;
-    }
-
-    public void setTransacoes(List<Transacao> transacoes) {
-        this.transacoes = transacoes;
-    }
-
     @Override
     public String toString() {
         return "Cliente{" +
@@ -58,7 +64,6 @@ public class Cliente {
                 ", sobrenome='" + sobrenome + '\'' +
                 ", idade='" + idade + '\'' +
                 ", email='" + email + '\'' +
-                (transacoes.isEmpty() ? "" : " trasacoes=" + transacoes) +
                 '}';
     }
 }

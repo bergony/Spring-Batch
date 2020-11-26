@@ -27,9 +27,10 @@ public class SkipExceptionReaderConfig {
 
     private RowMapper<Cliente> rowMapper() {
         return  new RowMapper<Cliente>() {
+
             @Override
             public Cliente mapRow(ResultSet rs, int rowNum) throws SQLException {
-                if(rs.getRow() == 8)
+                if(rs.getRow() == 6)
                     throw  new SQLException(String.format("Encerrando a execução - Cliente Invalid %s", rs.getString("email")));
                 else return clienteRowMapper(rs);
             }

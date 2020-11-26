@@ -12,8 +12,8 @@ public class LeituraArquivoLarguraFixaWriterConfig {
 
     @SuppressWarnings({ "rawtypes", "unchecked" })
     @Bean
-    public ItemWriter leituraArquivoDelimitadoWriter() {
-        return items -> items.forEach(System.out::println);
+    public ItemWriter<Cliente> leituraArquivoDelimitadoWriter() {
+        return clientes -> clientes.forEach(System.out::println);
     }
 //
 //    @Bean

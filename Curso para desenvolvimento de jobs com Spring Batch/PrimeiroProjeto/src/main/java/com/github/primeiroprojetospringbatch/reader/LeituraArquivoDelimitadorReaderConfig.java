@@ -21,8 +21,7 @@ public class LeituraArquivoDelimitadorReaderConfig {
         return new FlatFileItemReaderBuilder<Cliente>()
                 .name("leituraArquivoLarguraFixaReader")
                 .resource(arquivoClientes)
-                .fixedLength()
-                .columns(new Range[]{new Range(1,5), new Range(6,11), new Range(12,14), new Range(15,27)})
+                .delimited()
                 .names("nome","sobrenome","idade","email")
                 .targetType(Cliente.class)
                 .build();

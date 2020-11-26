@@ -42,8 +42,7 @@ public class ArquivoClienteTransacaoReader implements ItemStreamReader<Cliente> 
         objAtual = null;
 
         if (cliente != null) {
-            while (peek() instanceof Transacao)
-                    cliente.getTransacoes().add((Transacao) objAtual);
+
         }
         return cliente;
     }
